@@ -19,4 +19,44 @@ dmesg. Then copy all into Notepad++ or any other notepad and find /dev/ttyACM or
 
 <b>configuration.yaml:</b>
 
+arduino2:
+  port: /dev/ttyACM0
+
+arduino3:
+  port: /dev/ttyACM0
+
+switch:
+  platform: arduino2
+  pins:
+    11:
+      name: Fan Office2
+    12:
+      name: Light Desk2
+      initial: true
+      negate: true
+
+  platform: arduino3
+  pins:
+    11:
+      name: Fan Office3
+    12:
+      name: Light Desk3
+      initial: true
+      negate: true
+
+sensor:
+  platform: arduino2
+  pins:
+    1:
+      name: Door switch
+    0:
+      name: Brightness
+
+  platform: arduino3
+  pins:
+    1:
+      name: Door switch
+    0:
+      name: Brightness
+      
 Hope this helps.
