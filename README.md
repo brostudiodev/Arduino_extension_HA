@@ -17,8 +17,52 @@ Copy all files in custom_components. The directory structure will be CONFIG>CUST
 To check USB connection please refer to Home Assistant's guide for Arduino. The best way is to connect by SSH eg. by Putty and type
 dmesg. Then copy all into Notepad++ or any other notepad and find /dev/ttyACM or /dev/ttyUSB. Then check what number has each Arduino (eg /dev/ttyACM0 , /dev/ttyACM1)
 
-
 <b>configuration.yaml:</b>
 
+# Example configuration.yaml entry START
+
+arduino2:
+  port: /dev/ttyACM0
+arduino3:
+  port: /dev/ttyACM1
+  
+switch:
+ - platform: arduino2
+    pins:
+      11:
+        name: Arduino2 PIN11
+      12:
+        name: Arduino2 PIN12
+        initial: true
+        negate: true
+      13:
+        name: Arduino2 PIN13 - Led
+  - platform: arduino3
+    pins:
+      11:
+        name: Arduino3 PIN11
+      12:
+        name: Arduino3 PIN12
+        initial: true
+        negate: true
+      13:
+        name: Arduino3 PIN13 - Led
+
+sensor:
+  platform: arduino2
+  pins:
+    1:
+      name: Door switch
+    0:
+      name: Brightness
+      
+  platform: arduino3
+  pins:
+    1:
+      name: Door switch
+    0:
+      name: Brightness
+ 
+# - END 
 
 Hope this helps.
