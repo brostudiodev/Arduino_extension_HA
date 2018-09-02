@@ -1,5 +1,8 @@
 # Arduino extension (more than one Arduino board - Custom components
 
+This extension is the exact copy of hassio's arduino.py component. Without extension you can connect only one Arduino board. 
+Using this component you are able to connect up to 4 Arduinos (by USB cable) in Raspberry Pi (Rpi has 4 USB ports)
+
 <b>Installation:</b>
 
 Instal the Samba share addon in Hassio (to see the config directory in your comuter (where your configuration.yaml file lives) on your PI. 
